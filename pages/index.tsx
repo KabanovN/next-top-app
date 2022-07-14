@@ -1,8 +1,10 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import { useState } from 'react';
 import { Button, Htag, Ptag, Tag } from '../components';
+import { Rating } from '../components/Rating/Rating';
 
 export default function Home(): JSX.Element {
+    const [currentRating, setCurrentRating] = useState<number>(0);
+
     return (
         <>
             <Htag tag='h1'>Text</Htag>
@@ -33,6 +35,12 @@ export default function Home(): JSX.Element {
             <Tag size='s' color='red'>
                 Hello!
             </Tag>
+            <Rating currentRating={3} />
+            <Rating
+                currentRating={currentRating}
+                setCurrentRating={setCurrentRating}
+                isEditable
+            />
         </>
     );
 }
