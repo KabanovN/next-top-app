@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button, Htag, Ptag, Tag } from '../components';
-import { Rating } from '../components/Rating/Rating';
+import { Button, Htag, Ptag, Tag, Rating } from '../components';
+import { withLayout } from '../layout/Layout';
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
     const [currentRating, setCurrentRating] = useState<number>(0);
 
     return (
@@ -44,3 +44,5 @@ export default function Home(): JSX.Element {
         </>
     );
 }
+
+export default withLayout(Home);
