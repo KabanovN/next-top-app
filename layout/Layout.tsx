@@ -3,19 +3,22 @@ import { LayoutProps } from './Layout.props';
 import { Header } from './Header/Header';
 import { Nav } from './Nav/Nav';
 import { Footer } from './Footer/Footer';
+import styles from './Layout.module.css';
 
-const Layout = ({ children }: LayoutProps): JSX.Element => {
+function Layout({ children }: LayoutProps): JSX.Element {
     return (
-        <>
-            <Header />
-            <main>
-                <Nav />
+        <div className={styles.container}>
+            <section className={styles.sidebar}>
+                <Header />
+                <Nav className={styles.nav} />
+            </section>
+            <main className={styles.main}>
                 <section>{children}</section>
             </main>
-            <Footer />
-        </>
+            <Footer className={styles.footer} />
+        </div>
     );
-};
+}
 
 export const withLayout = <T extends Record<string, unknown>>(
     Component: FunctionComponent<T>

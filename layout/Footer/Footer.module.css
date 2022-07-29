@@ -1,0 +1,18 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'copyright . policy';
+    margin: 10px;
+}
+
+.copyright {
+    grid-area: copyright;
+}
+
+.agreement {
+    margin-right: 10px;
+}
+
+.policy {
+    grid-area: policy;
+}
